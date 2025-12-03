@@ -68,3 +68,4 @@ func main() {
 	}
 	fmt.Printf("Total lines: %d", res.Total)
 }
+var debug = false
