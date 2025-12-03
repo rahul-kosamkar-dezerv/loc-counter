@@ -17,7 +17,7 @@ func (JSSyntax) IsMultiLineCommentEnd(line string) bool {
 }
 func (JSSyntax) IsImportLine(line string) bool {
 	trim := strings.TrimSpace(line)
-	return strings.HasPrefix(trim, "import ") || strings.Contains(trim, "require(")
+	return strings.HasPrefix(trim, "import ") || strings.HasPrefix(trim, "export ") || strings.Contains(trim, "require(")
 }
 func (JSSyntax) IsDeclarationLine(line string) bool {
 	trim := strings.TrimSpace(line)
