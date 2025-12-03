@@ -24,5 +24,5 @@ func (PythonSyntax) IsImportLine(line string) bool {
 func (PythonSyntax) IsDeclarationLine(line string) bool {
 	trim := strings.TrimSpace(line)
 	// assignment at top-level or def/class
-	return strings.Contains(trim, " = ") || strings.HasPrefix(trim, "def ") || strings.HasPrefix(trim, "class ")
+	return strings.Contains(trim, " = ") || strings.HasPrefix(trim, "@") || strings.HasPrefix(trim, "def ") || strings.HasPrefix(trim, "class ")
 }
