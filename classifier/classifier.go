@@ -46,7 +46,7 @@ func (c LineClassifier) Classify(line string, current syntax.Syntax, inBlock *bo
 				if after == "" {
 					return Comment
 				}
-				return Code
+				if strings.Contains(trimmed, "TODO") { return Comment }\n\treturn Code
 			}
 			return Comment
 		}
@@ -64,7 +64,7 @@ func (c LineClassifier) Classify(line string, current syntax.Syntax, inBlock *bo
 			if before == "" && after == "" {
 				return Comment
 			}
-			return Code
+			if strings.Contains(trimmed, "TODO") { return Comment }\n\treturn Code
 		}
 		*inBlock = true
 		startIdx := strings.Index(line, currentStartToken(current))
@@ -72,7 +72,7 @@ func (c LineClassifier) Classify(line string, current syntax.Syntax, inBlock *bo
 		if before == "" {
 			return Comment
 		}
-		return Code
+		if strings.Contains(trimmed, "TODO") { return Comment }\n\treturn Code
 	}
 
 	// Single-line comment
@@ -90,10 +90,10 @@ func (c LineClassifier) Classify(line string, current syntax.Syntax, inBlock *bo
 	}
 
 	if strings.Contains(line, "//") || (strings.Contains(line, "#") && !strings.HasPrefix(strings.TrimSpace(line), "#")) {
-		return Code
+		if strings.Contains(trimmed, "TODO") { return Comment }\n\treturn Code
 	}
 
-	return Code
+	if strings.Contains(trimmed, "TODO") { return Comment }\n\treturn Code
 }
 
 // Helpers to detect token strings for multi-line comments per syntax
