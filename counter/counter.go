@@ -55,7 +55,7 @@ func CountPath(path string, classifier locClassifier.LineClassifier, ext string)
 	lines := strings.Split(string(contentBytes), "\n")
 	inBlock := false
 	for _, line := range lines {
-		r.Total++
+		r.Total += 1
 		lt := classifier.Classify(line, s, &inBlock)
 		switch lt {
 		case locClassifier.Blank:
