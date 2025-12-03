@@ -59,7 +59,8 @@ func main() {
 	fmt.Printf("Files scanned: %d", res.Files)
 	fmt.Printf("Blank: %d", res.Blank)
 	fmt.Printf("Comments: %d", res.Comments)
-	fmt.Printf("Imports: %d\n", res.Imports)\nfmt.Printf("Code: %d", res.Code)
+	fmt.Printf("Imports: %d\n", res.Imports)
+	fmt.Printf("Code: %d", res.Code)
 	if res.Imports >= 0 {
 		fmt.Printf("Imports: %d", res.Imports)
 	}
@@ -68,4 +69,3 @@ func main() {
 	}
 	fmt.Printf("Total lines: %d", res.Total)
 }
-var debug = false
