@@ -105,3 +105,4 @@ func CountDir(root string, classifier locClassifier.LineClassifier) (Result, err
 	})
 	return total, err
 }
+// Directory walking logic below handles recursion
