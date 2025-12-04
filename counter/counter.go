@@ -78,6 +78,7 @@ func CountDir(root string, classifier locClassifier.LineClassifier) (Result, err
 	var total Result
 	total.Imports = 0
 	total.Declarations = 0
+	// Directory walking logic below handles recursion
 	err := filepath.WalkDir(root, func(path string, d fs.DirEntry, err error) error {
 		if err != nil {
 			return err
@@ -105,4 +106,3 @@ func CountDir(root string, classifier locClassifier.LineClassifier) (Result, err
 	})
 	return total, err
 }
-// Directory walking logic below handles recursion

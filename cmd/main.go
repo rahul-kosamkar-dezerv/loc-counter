@@ -56,16 +56,15 @@ func main() {
 	}
 
 	// Print summary
-	fmt.Printf("Files scanned: %d", res.Files)
-	fmt.Printf("Blank: %d", res.Blank)
-	fmt.Printf("Comments: %d", res.Comments)
-	fmt.Printf("Imports: %d\n", res.Imports)
-	fmt.Printf("Code: %d", res.Code)
+	fmt.Printf("Files scanned: %d\n", res.Files)
+	fmt.Printf("Blank: %d\n", res.Blank)
+	fmt.Printf("Comments: %d\n", res.Comments)
 	if res.Imports >= 0 {
-		fmt.Printf("Imports: %d", res.Imports)
+		fmt.Printf("Imports: %d\n", res.Imports)
 	}
+	fmt.Printf("Code: %d\n", res.Code)
 	if res.Declarations >= 0 {
-		fmt.Printf("Declarations: %d", res.Declarations)
+		fmt.Printf("Declarations: %d\n", res.Declarations)
 	}
-	fmt.Printf("Total lines: %d", res.Total)
+	fmt.Printf("Total lines: %d\n", res.Total)
 }
